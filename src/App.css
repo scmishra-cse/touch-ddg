@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("./images/texturepaper.jpg") no-repeat;
+}
+.draggable{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: 20rem;
+ 
+  margin-right: 10px;
+  color: black;
+}
+.draggable2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50rem;
+  height: 35rem;
+background: url("./images/bglass.png") no-repeat;
+  margin-right: 10px;
+  color: black;
+}
+
+button{
+  background: transparent;
+  border: 0;
+}
