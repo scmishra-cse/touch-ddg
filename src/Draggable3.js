@@ -2,9 +2,9 @@ import React from 'react';
 import {useDraggable} from '@dnd-kit/core';
 import {CSS} from '@dnd-kit/utilities';
 
-function Draggable(props) {
+function Draggable3(props) {
   const {attributes, listeners, setNodeRef, transform} = useDraggable({
- id: 'draggable'
+ id: 'draggable3'
   });
   
   const style = transform ? {
@@ -20,4 +20,4 @@ function Draggable(props) {
           
   );
 }
-export default Draggable;
+export default Draggable3;
