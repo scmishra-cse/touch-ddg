@@ -26,9 +26,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4.5%;
   width: 50rem;
   height: 35rem;
 background: url("./images/bglass.png") no-repeat;
+background-position: center;
   margin-right: 10px;
   color: black;
 }

@@ -80,6 +80,7 @@ const draggableMarkup5 = (
     
         </div>
       <div className='draggable2'>
+
       <Droppable>
         {isDropped ? draggableMarkup : 'Drop here'}
       </Droppable>
