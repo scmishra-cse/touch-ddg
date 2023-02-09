@@ -14,9 +14,26 @@ import Droppable3 from './Droppable3';
 import Droppable4 from './Droppable4';
 import Droppable5 from './Droppable5';
 import './Sensors';
+import {
+  KeyboardSensor,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import { sortableKeyboardCoordinates } from "@dnd-kit/sortable";
+
 
 function App() {
+  const sensors = useSensors(
+    useSensor(MouseSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
   const [isDropped, setIsDropped] = useState(false);
+  // const [isString, stringValid]= useState('/images/icecube.png','/images/bgwhiskey.png');
   const draggableMarkup = (
     <Draggable>
     <div className='drag_item'>
@@ -68,7 +85,7 @@ const draggableMarkup5 = (
 
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
+    <DndContext  sensors={sensors} onDragEnd={handleDragEnd}>
       <div className='section'>
         <div className='draggable'>
         {!isDropped ? draggableMarkup : null}
@@ -77,46 +94,60 @@ const draggableMarkup5 = (
         {!isDropped3 ? draggableMarkup3 : null}
         {!isDropped4 ? draggableMarkup4 : null}
         {!isDropped5 ? draggableMarkup5 : null}
-    
         </div>
       <div className='draggable2'>
-
+      <div className='drag'>
       <Droppable>
         {isDropped ? draggableMarkup : 'Drop here'}
       </Droppable>
 
+      </div>
+      <div className='drag1'>
+   
       <Droppable1>
       {isDropped1 ? draggableMarkup1 : 'Drop here'}
       </Droppable1>
 
-      <Droppable2>
+</div>
+   <div className='drag2'>
+   <Droppable2>
       {isDropped2 ? draggableMarkup2 : 'Drop here'}
       </Droppable2>
 
-      <Droppable3>
+</div>
+   <div className='drag3'>
+   <Droppable3>
       {isDropped3 ? draggableMarkup3 : 'Drop here'}
       </Droppable3>
 
-      <Droppable4>
+</div>
+   <div className='drag4'>
+
+   <Droppable4>
       {isDropped4 ? draggableMarkup4 : 'Drop here'}
       </Droppable4>
 
-      <Droppable5>
+</div>
+   <div className='drag5'>
+ 
+   <Droppable5>
       {isDropped5 ? draggableMarkup5 : 'Drop here'}
       </Droppable5>
+</div>
       </div>
       </div>
     </DndContext>
   );
   
   function handleDragEnd(event) {
+    <div id="back"></div>
     if (event.over && event.over.id === 'droppable') {
       setIsDropped(true);
     }
-    if (event.over && event.over.id === 'droppable1') {
+       if (event.over && event.over.id === 'droppable1') {
       setIsDropped1(true);
     }
-    if (event.over && event.over.id === 'droppable2') {
+      if (event.over && event.over.id === 'droppable2') {
       setIsDropped2(true);
     }
     if (event.over && event.over.id === 'droppable3') {
@@ -127,6 +158,9 @@ const draggableMarkup5 = (
     }
     if (event.over && event.over.id === 'droppable5') {
       setIsDropped5(true);
+    }
+    if(event.over){
+   
     }
   }
 }
