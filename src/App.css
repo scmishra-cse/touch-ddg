@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50rem;
+  width: 40rem;
  gap: 0.9%;
   height: 40rem;
 background: url("./images/bglass.png") no-repeat;
@@ -35,6 +35,7 @@ background-position: center;
 background-size: cover;
   margin-right: 10px;
   color: black;
+  border: 1px solid black;
 }
 .droppable {
   padding: 10px 5px;
